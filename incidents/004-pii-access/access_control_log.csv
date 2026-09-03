@@ -1,0 +1,3 @@
+change_id,table_name,principal,access_level,changed_at,notes
+1,customer_pii,compliance_team,SELECT,2026-06-01 00:00:00,"Original restricted access, set at table creation"
+2,customer_pii,all_analysts,SELECT,2026-08-26 09:14:00,"Broad IAM role update intended for a different, non-sensitive dataset accidentally included customer_pii in the affected resource group"

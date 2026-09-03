@@ -1,0 +1,6 @@
+-- Current production definition of sentinelops_data.regional_revenue_rollup
+CREATE OR REPLACE VIEW sentinelops_data.regional_revenue_rollup AS
+SELECT region, DATE(completed_at) AS day, COUNT(*) AS orders, SUM(amount) AS revenue_usd
+FROM sentinelops_data.regional_sales
+GROUP BY region, day
+-- NOTE: amount is summed directly regardless of currency. No join to currency_rates.
